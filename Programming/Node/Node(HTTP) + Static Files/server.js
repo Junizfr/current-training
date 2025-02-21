@@ -15,7 +15,13 @@ const server = http.createServer((req, res) => {
         res.end();
     }
 
-    if(req.url === '/') {
+    if(req.url.match(/.png$/)) {
+        res.writeHead(200, {'Content-Type': 'image/png'});
+        res.write(fs.readFileSync('public/images/logo.png'));
+        res.end();
+    }
+
+    if(req.url === '/') { 
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(fs.readFileSync('public/index.html'));
         res.end();
