@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+const args = process.argv;
 
 const server = http.createServer((req, res) => {
     if(req.url.match(/.css$/)) {
@@ -21,4 +22,4 @@ const server = http.createServer((req, res) => {
     }
 })
 
-server.listen(3000);
+server.listen(args[2] || 3000);
