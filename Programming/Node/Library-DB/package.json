@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start": "rm bibliotheque.db && node init.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}
